@@ -28,8 +28,8 @@ int main(int argc, char const* argv[]){
     int clientSocket = accept(servSockD, NULL, NULL);
 
     // recive's messages from client socket
+    char strData[255];
     while (recv(clientSocket, strData, sizeof(strData), 0)){
-        char strData[255];
         printf("%s\n",strData);
         if (!strncmp(strData, "LOCAL",5)){
             return 0;
